@@ -27,10 +27,24 @@
     </div>
     <div class="mdui-card">
         <div class="mdui-card-media">
-            <img id="image" data-original="https://quickso.cn/60s/get60s.php" src="https://quickso.cn/60s/get60s.php" alt="右键下载">
+            <img id="image" alt="右键下载">
         </div>
 
     </div>
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        document.getElementById("day").src = myObj.imageUrl;
+    }
+};
+xmlhttp.open("GET", "https://api.2xb.cn/zaob", true);
+xmlhttp.send();
+
+
+</script>
 
     <br>
     <div align="center"> Copyright © 2021 欢哥科技</div>
