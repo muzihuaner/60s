@@ -38,6 +38,7 @@ xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
         document.getElementById("image").src = myObj.imageUrl;
+        document.getElementById("image").data-original = myObj.imageUrl;
     }
 };
 xmlhttp.open("GET", "https://api.2xb.cn/zaob", true);
