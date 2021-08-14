@@ -37,7 +37,7 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
-        document.getElementById("day").src = myObj.imageUrl;
+        document.getElementById("image").src = myObj.imageUrl;
     }
 };
 xmlhttp.open("GET", "https://api.2xb.cn/zaob", true);
