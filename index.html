@@ -38,7 +38,7 @@ xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
         document.getElementById("image").src = myObj.imageUrl;
-        document.getElementById("image").data-original = myObj.imageUrl;
+       
     }
 };
 xmlhttp.open("GET", "https://api.2xb.cn/zaob", true);
@@ -51,11 +51,11 @@ xmlhttp.send();
     <div align="center"> Copyright © 2021 欢哥科技</div>
     <script>
         var image = new Viewer(document.getElementById('image'), {
-            url: 'data-original'
+            url: 'src'
         });
 
         var viewer = new Viewer(document.getElementById('viewer'), {
-            url: 'data-original'
+            url: 'src'
         });
     </script>
 </body>
